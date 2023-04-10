@@ -10,7 +10,7 @@ import os
 
 # our images are located in the dataset folder
 print("[INFO] start processing faces...")
-imagePaths = list(paths.list_images("Teachers_details"))
+imagePaths = list(paths.list_images("dataset"))
 
 # initialize the list of known encodings and known names
 knownEncodings = []
@@ -45,6 +45,6 @@ for (i, imagePath) in enumerate(imagePaths):
 # dump the facial encodings + names to disk
 print("[INFO] serializing encodings...")
 data = {"encodings": knownEncodings, "names": knownNames}
-f = open("T_encodings.pickle", "wb")
+f = open("test.pickle", "wb")
 f.write(pickle.dumps(data))
 f.close()
